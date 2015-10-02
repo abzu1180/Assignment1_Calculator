@@ -13,6 +13,7 @@
 		DF0149671BA7B85500FB00BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF0149661BA7B85500FB00BC /* Images.xcassets */; };
 		DF01496A1BA7B85500FB00BC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF0149681BA7B85500FB00BC /* LaunchScreen.xib */; };
 		DF0149761BA7B85500FB00BC /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0149751BA7B85500FB00BC /* CalculatorTests.swift */; };
+		DF89FBC51BBE280100C405A2 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF89FBC41BBE280100C405A2 /* CalculatorBrain.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		DF01496F1BA7B85500FB00BC /* CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0149741BA7B85500FB00BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF0149751BA7B85500FB00BC /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
+		DF89FBC41BBE280100C405A2 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				DF0149611BA7B85500FB00BC /* ViewController.swift */,
 				DF0149631BA7B85500FB00BC /* Main.storyboard */,
+				DF89FBC41BBE280100C405A2 /* CalculatorBrain.swift */,
 				DF01495D1BA7B85500FB00BC /* Supporting Files */,
 			);
 			path = Calculator;
@@ -156,6 +159,8 @@
 		DF0149521BA7B85500FB00BC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "MARITZA ABZUN";
 				TargetAttributes = {
@@ -212,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF89FBC51BBE280100C405A2 /* CalculatorBrain.swift in Sources */,
 				DF0149621BA7B85500FB00BC /* ViewController.swift in Sources */,
 				DF0149601BA7B85500FB00BC /* AppDelegate.swift in Sources */,
 			);
@@ -411,6 +417,7 @@
 				DF01497B1BA7B85500FB00BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DF01497C1BA7B85500FB00BC /* Build configuration list for PBXNativeTarget "CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +426,7 @@
 				DF01497E1BA7B85500FB00BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

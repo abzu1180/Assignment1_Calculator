@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var history: UILabel!
     
     var userIsInTheMiddleOfTypingANumber = false
-    var operandStack = Array<Double>()
+    var brain = CalculatorBrain()
     var historyStack = ""
     
     //
@@ -33,56 +33,25 @@ class ViewController: UIViewController {
         }
         //println("digit = \(digit)")
     }
-    
-    
+
     //
     @IBAction func operate(sender: UIButton) {
-        
-        let operation = sender.currentTitle!
         
         if userIsInTheMiddleOfTypingANumber {
             enter()
         }
-        
-        
-        switch operation {
-        case "×": performOperation {$0 * $1}
-            
-        case "÷": performOperation {$1 / $0}
-        case "+": performOperation {$0 + $1}
-        case "-": performOperation {$1 - $0}
-        case "√": performOperation2 { sqrt($0) }
-        case "sin": performOperation2 {sin($0)}
-        case "cos": performOperation2 {cos($0)}
-        case "tan": performOperation2 {tan($0)}
-        case "π": performOperation2 {$0 * 3.14}
-        default: break
+        if let operation = sender.currentTitle{
+            if let result = brain.performOperation(operation) {
+                displayValue = result
+            } else {
+                displayValue = 0
+            }
         }
-        
     }
-    
-    
-    func performOperation(operation: (Double, Double) -> Double) {
-        if operandStack.count >= 2 {
-            displayValue = operation(operandStack.removeLast(), operandStack.removeLast())
-            enter()
-        }
-
-    }
-    
-    
-    func performOperation2(operation: Double -> Double) {
-        if operandStack.count >= 1 {
-            displayValue = operation(operandStack.removeLast())
-            enter()
-        }
-        
-    }
-    
     
     @IBAction func clear() {
         userIsInTheMiddleOfTypingANumber = false
-        operandStack.removeAll()
+        brain.clearStack() // FIX
         display.text = "0"
         enter()
     }
@@ -100,10 +69,13 @@ class ViewController: UIViewController {
         
         userIsInTheMiddleOfTypingANumber = false
         decimalIsPressed = false
-        
-        operandStack.append(displayValue)
+        if let result = brain.pushOperand(displayValue) {
+            displayValue = result
+        }
+        else {
+            displayValue = 0
+        }
         history.text = "\(displayValue)"
-        println("operandStack = \(operandStack)")
         
     }
     
