@@ -25,7 +25,7 @@ class CalculatorBrain
         knownOps["+"] = Op.BinaryOperation("+") { $0 + $1 }
         knownOps["-"] = Op.BinaryOperation("-") { $1 - $0 }
         knownOps["√"] = Op.UnaryOperation("√", sqrt)
-        knownOps["sin"] = Op.UnaryOperation("sin",  
+       // knownOps["sin"] = Op.UnaryOperation("sin",
         // make the rest for the other operations pi, sin, cos, tan
     }
     
